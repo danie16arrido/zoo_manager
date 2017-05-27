@@ -22,7 +22,7 @@ public interface Animalable {
         MAMMAL
     }
 
-    public enum AnimalMotion{
+    public enum Motion{
         SWIM,
         CRAWL,
         CLIMB,
@@ -47,10 +47,13 @@ public interface Animalable {
         WATER
     }
 
+
+
     public AnimalClass getMyClass();
     public AnimalSubClass getMySubClass();
     public Consumption getMyConsumption();
     public ArrayList<Media> getMyMedia();
+    public ArrayList<Motion> getMyMotion();
 //    public Movable[] getMyMotion();
 //
 //    public String getMyName();

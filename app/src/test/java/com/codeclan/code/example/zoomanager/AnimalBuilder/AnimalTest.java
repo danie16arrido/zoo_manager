@@ -1,10 +1,7 @@
 package com.codeclan.code.example.zoomanager.AnimalBuilder;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -58,15 +55,33 @@ public class AnimalTest {
 
     @Test
     public void canSetMedia(){
-        animal.setMyMedia(Animalable.Media.WATER);
+        animal.addMedia(Animalable.Media.WATER);
         assertEquals(1, animal.getMyMedia().size());
     }
 
     @Test
     public void canGetMediaName(){
-        animal.setMyMedia(Animalable.Media.WATER);
-        assertEquals("WATER", animal.getMyMedia().get(0));
+        animal.addMedia(Animalable.Media.WATER);
+        assertEquals("WATER", animal.getMyMedia().get(0).name());
     }
+
+    @Test
+    public void canGetMotionNotSet(){
+        assertEquals(0, animal.getMyMotion().size());
+    }
+
+    @Test
+    public void canAddMotion(){
+        animal.addMotion(Animalable.Motion.CLIMB);
+        assertEquals(1, animal.getMyMedia().size());
+    }
+
+    @Test
+    public void canGetMotionName(){
+        animal.addMotion(Animalable.Motion.CLIMB);
+        assertEquals("CLIMB", animal.getMyMedia().get(0).name());
+    }
+
 
 
 }

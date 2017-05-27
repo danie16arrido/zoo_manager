@@ -12,6 +12,7 @@ public class AnimalTest {
     Animal animal;
     @Before
     public  void before(){
+
         animal = new Animal(Animalable.AnimalClass.VERTEBRATE, Animalable.AnimalSubClass.MAMMAL, Animalable.Consumption.CARNIVORE);
     }
 
@@ -73,13 +74,13 @@ public class AnimalTest {
     @Test
     public void canAddMotion(){
         animal.addMotion(Animalable.Motion.CLIMB);
-        assertEquals(1, animal.getMyMedia().size());
+        assertEquals(1, animal.getMyMotion().size());
     }
 
     @Test
     public void canGetMotionName(){
         animal.addMotion(Animalable.Motion.CLIMB);
-        assertEquals("CLIMB", animal.getMyMedia().get(0).name());
+        assertEquals("CLIMB", animal.getMyMotion().get(0).name());
     }
 
     @Test

@@ -9,10 +9,13 @@ import static org.junit.Assert.*;
  * Created by user on 27/05/2017.
  */
 public class MammalTest {
-    Mammal lion;
+    public class Lion extends Mammal{
+
+    }
+    Lion lion;
     @Before
     public void before(){
-        lion = new Mammal();
+        lion = new Lion();
     }
 
     @Test

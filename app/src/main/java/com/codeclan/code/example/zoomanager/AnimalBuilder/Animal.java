@@ -17,6 +17,7 @@ public class Animal implements Animalable {
     private String scientificName;
     private String commonName;
     private Boolean hazardous;
+    private Sex mySex;
 
     public Animal(AnimalClass aClass, AnimalSubClass aSubClass, Consumption aConsumption){
         this.myClass = aClass;
@@ -101,5 +102,12 @@ public class Animal implements Animalable {
     }
     public void setHazardous(boolean hazardous) {
         this.hazardous = hazardous;
+    }
+    
+    public Sex getMySex(){
+        return this.mySex;
+    }
+    public void setMySex(Sex mySex) {
+        this.mySex = mySex;
     }
 }

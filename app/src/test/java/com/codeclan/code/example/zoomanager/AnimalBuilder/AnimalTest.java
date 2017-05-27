@@ -106,6 +106,10 @@ public class AnimalTest {
         assertEquals(true, animal.amIHazardous());
     }
 
-
+    @Test
+    public void canGetSetMySex(){
+        animal.setMySex(Animalable.Sex.FEMALE);
+        assertEquals("FEMALE", animal.getMySex().name());
+    }
 
 }

@@ -3,6 +3,7 @@ package com.codeclan.code.example.zoomanager.AnimalBuilder;
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 /**
  * Created by user on 27/05/2017.
@@ -47,6 +48,12 @@ public interface Animalable {
         WATER
     }
 
+    public enum Sex {
+        MALE,
+        FEMALE,
+        HERMAPHRODITE
+    }
+
 
 
     public AnimalClass getMyClass();
@@ -58,4 +65,5 @@ public interface Animalable {
     public String getCommonName();
     public String getScientificName();
     public Boolean amIHazardous();
+    public Sex getMySex();
 }

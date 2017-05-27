@@ -9,15 +9,16 @@ import static org.junit.Assert.*;
  * Created by user on 27/05/2017.
  */
 public class AnimalTest {
-    Animal animal;
+    Mammal animal;
     @Before
     public  void before(){
 
-        animal = new Animal(Animalable.AnimalClass.VERTEBRATE, Animalable.AnimalSubClass.MAMMAL, Animalable.Consumption.CARNIVORE);
+        animal = new Mammal();
     }
 
     @Test
     public void canGetClass(){
+        animal.setMyClass(Animalable.AnimalClass.VERTEBRATE);
         assertEquals("VERTEBRATE", animal.getMyClass().name());
     }
 
@@ -29,6 +30,7 @@ public class AnimalTest {
 
     @Test
     public void canGetSubClass(){
+        animal.setSubClass(Animalable.AnimalSubClass.MAMMAL);
         assertEquals("MAMMAL", animal.getMySubClass().name());
     }
 
@@ -40,6 +42,7 @@ public class AnimalTest {
 
     @Test
     public void canGetConsumption(){
+        animal.setMyConsumption(Animalable.Consumption.CARNIVORE);
     assertEquals("CARNIVORE", animal.getMyConsumption().name());
     }
 

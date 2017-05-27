@@ -13,10 +13,21 @@ public class Animal implements Animalable {
     private ArrayList<Media> myMedia;
     private ArrayList<Motion> myMotion;
 
+    private String name;
+    private String scientificName;
+    private String commonName;
+    private Boolean hazardous;
+
     public Animal(AnimalClass aClass, AnimalSubClass aSubClass, Consumption aConsumption){
         this.myClass = aClass;
         this.mySubClass = aSubClass;
         this.myConsumption = aConsumption;
+        this.myMedia = new ArrayList<Media>();
+        this.myMotion = new ArrayList<Motion>();
+    }
+
+    //Overloading Constructor
+    public Animal(){
         this.myMedia = new ArrayList<Media>();
         this.myMotion = new ArrayList<Motion>();
     }
@@ -59,5 +70,36 @@ public class Animal implements Animalable {
 
     public void addMotion(Motion myMotion) {
         this.myMotion.add(myMotion);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getScientificName() {
+        return this.scientificName;
+    }
+
+    public void setScientificName(String scientificName) {
+        this.scientificName = scientificName;
+    }
+    
+    public String getCommonName(){
+        return this.commonName;
+    }
+    
+    public void setCommonName(String commonName) {
+        this.commonName = commonName;
+    }
+    
+    public Boolean amIHazardous(){
+        return this.hazardous;
+    }
+    public void setHazardous(boolean hazardous) {
+        this.hazardous = hazardous;
     }
 }

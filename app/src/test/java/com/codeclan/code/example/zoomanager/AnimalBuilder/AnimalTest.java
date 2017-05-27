@@ -82,6 +82,30 @@ public class AnimalTest {
         assertEquals("CLIMB", animal.getMyMedia().get(0).name());
     }
 
+    @Test
+    public void canGetSetName(){
+        animal.setName("Heidi");
+        assertEquals("Heidi", animal.getName());
+    }
+
+    @Test
+    public void canGetSetScientificName(){
+        animal.setScientificName("Bufo Bufo");
+        assertEquals("Bufo Bufo", animal.getScientificName());
+    }
+
+    @Test
+    public void canGetSetCommonName(){
+        animal.setCommonName("Eagle");
+        assertEquals("Eagle", animal.getCommonName());
+    }
+
+    @Test
+    public void canGetSetHazardousness(){
+        animal.setHazardous(true);
+        assertEquals(true, animal.amIHazardous());
+    }
+
 
 
 }

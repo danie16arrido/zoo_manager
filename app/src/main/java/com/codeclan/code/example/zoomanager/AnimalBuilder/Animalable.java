@@ -54,9 +54,8 @@ public interface Animalable {
     public Consumption getMyConsumption();
     public ArrayList<Media> getMyMedia();
     public ArrayList<Motion> getMyMotion();
-//    public Movable[] getMyMotion();
-//
-//    public String getMyName();
-//    public String getMySciName();
-//    public String amIHazardous();
+    public String getName();
+    public String getCommonName();
+    public String getScientificName();
+    public Boolean amIHazardous();
 }

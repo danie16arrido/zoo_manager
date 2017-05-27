@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by user on 27/05/2017.
  */
 
-public class Animal implements Animalable {
+public abstract class Animal implements Animalable {
     private AnimalClass myClass;
     private AnimalSubClass mySubClass;
     private Consumption myConsumption;
@@ -19,19 +19,19 @@ public class Animal implements Animalable {
     private Boolean hazardous;
     private Sex mySex;
 
-    public Animal(AnimalClass aClass, AnimalSubClass aSubClass, Consumption aConsumption){
-        this.myClass = aClass;
-        this.mySubClass = aSubClass;
-        this.myConsumption = aConsumption;
-        this.myMedia = new ArrayList<Media>();
-        this.myMotion = new ArrayList<Motion>();
-    }
-
-    //Overloading Constructor
-    public Animal(){
-        this.myMedia = new ArrayList<Media>();
-        this.myMotion = new ArrayList<Motion>();
-    }
+//    public Animal(AnimalClass aClass, AnimalSubClass aSubClass, Consumption aConsumption){
+//        this.myClass = aClass;
+//        this.mySubClass = aSubClass;
+//        this.myConsumption = aConsumption;
+//        this.myMedia = new ArrayList<Media>();
+//        this.myMotion = new ArrayList<Motion>();
+//    }
+//
+//    //Overloading Constructor
+//    public Animal(){
+//        this.myMedia = new ArrayList<Media>();
+//        this.myMotion = new ArrayList<Motion>();
+//    }
 
     public AnimalClass getMyClass(){
         return this.myClass;

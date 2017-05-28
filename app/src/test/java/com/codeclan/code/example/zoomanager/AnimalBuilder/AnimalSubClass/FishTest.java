@@ -1,6 +1,6 @@
-package com.codeclan.code.example.zoomanager.AnimalBuilder;
+package com.codeclan.code.example.zoomanager.AnimalBuilder.AnimalSubClass;
 
-import com.codeclan.code.example.zoomanager.AnimalBuilder.SubClass.Fish;
+import com.codeclan.code.example.zoomanager.AnimalBuilder.AnimalSubClass.Fish;
 
 import org.junit.Before;
 import org.junit.Test;

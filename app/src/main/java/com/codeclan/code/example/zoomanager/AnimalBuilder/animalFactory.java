@@ -1,7 +1,7 @@
 package com.codeclan.code.example.zoomanager.AnimalBuilder;
 
-import com.codeclan.code.example.zoomanager.AnimalBuilder.SubClass.Fish;
-import com.codeclan.code.example.zoomanager.AnimalBuilder.SubClass.Mammal;
+import com.codeclan.code.example.zoomanager.AnimalBuilder.AnimalSubClass.Fish;
+import com.codeclan.code.example.zoomanager.AnimalBuilder.AnimalSubClass.Mammal;
 
 /**
  * Created by user on 28/05/2017.

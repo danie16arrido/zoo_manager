@@ -1,0 +1,45 @@
+package com.codeclan.code.example.zoomanager.AnimalBuilder.Motion;
+
+import com.codeclan.code.example.zoomanager.AnimalBuilder.AnimalClass.Vertebrate;
+import com.codeclan.code.example.zoomanager.AnimalBuilder.Animalable;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+/**
+ * Created by user on 28/05/2017.
+ */
+public class FlyingTest {
+    public abstract class Bear extends Vertebrate {}
+
+    public class ClimbingBear extends Bear implements Climbing, Flying{
+        public ClimbingBear(){
+            iClimb(Motion.CLIMB);
+            iFly(Motion.FLY);
+        }
+
+        @Override
+        public void iClimb(Motion climb) {
+            addMotion(climb);
+        }
+
+        @Override
+        public void iFly(Motion fly) {
+            addMotion(fly);
+        }
+    }
+    ClimbingBear balu;
+
+    @Before
+    public void before(){
+        balu = new ClimbingBear();
+    }
+    @Test
+    public void iFly() throws Exception {
+        assertEquals(true, balu.getMyMotion().contains(Animalable.Motion.FLY));
+
+    }
+
+}

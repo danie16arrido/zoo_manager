@@ -30,7 +30,8 @@ public interface Animalable {
         RUN,
         WALK,
         JUMP,
-        FLY
+        FLY,
+        DIG
     }
 
     public enum Consumption {

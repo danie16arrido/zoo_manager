@@ -36,7 +36,7 @@ public abstract class Animal implements Animalable {
         return this.mySubClass;
     }
 
-    public void setSubClass(AnimalSubClass mySubClass){
+    public void setMySubClass(AnimalSubClass mySubClass){
         this.mySubClass = mySubClass;
     }
 

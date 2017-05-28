@@ -22,4 +22,10 @@ public class MammalTest {
     public void isVertebrate(){
         assertEquals("VERTEBRATE", lion.getMyClass().name());
     }
+
+    @Test
+    public void canSetSex(){
+        lion.setMySex(Animalable.Sex.FEMALE);
+        assertEquals("FEMALE", lion.getMySex().name());
+    }
 }

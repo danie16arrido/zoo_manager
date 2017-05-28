@@ -32,13 +32,13 @@ public class AnimalTest {
 
     @Test
     public void canGetSubClass(){
-        animal.setSubClass(Animalable.AnimalSubClass.MAMMAL);
+        animal.setMySubClass(Animalable.AnimalSubClass.MAMMAL);
         assertEquals("MAMMAL", animal.getMySubClass().name());
     }
 
     @Test
     public void canSetSubClass(){
-        animal.setSubClass(Animalable.AnimalSubClass.FISH);
+        animal.setMySubClass(Animalable.AnimalSubClass.FISH);
         assertEquals("FISH", animal.getMySubClass().name());
     }
 

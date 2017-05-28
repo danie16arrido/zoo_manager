@@ -57,13 +57,32 @@ public interface Animalable {
 
 
     public AnimalClass getMyClass();
+    public void setMyClass(AnimalClass animalClass);
+
     public AnimalSubClass getMySubClass();
+    public void setMySubClass(AnimalSubClass animalSubClass);
+
     public Consumption getMyConsumption();
+    public void setMyConsumption(Consumption myConsumption);
+
     public ArrayList<Media> getMyMedia();
+    public void addMedia(Media aMedia);
+
     public ArrayList<Motion> getMyMotion();
+    public void addMotion(Motion aMotion);
+
     public String getName();
+    public void setName(String name);
+
     public String getCommonName();
+    public void setCommonName(String commonName);
+
     public String getScientificName();
+    public void setScientificName(String scientificName);
+
     public Boolean amIHazardous();
+    public void setHazardous(boolean hazardous);
+
     public Sex getMySex();
+    public void setMySex(Sex aSex);
 }

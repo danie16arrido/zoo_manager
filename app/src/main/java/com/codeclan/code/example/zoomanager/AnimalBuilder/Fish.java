@@ -8,6 +8,8 @@ public class Fish extends Animal {
     public Fish(){
         super();
         setMyClass(AnimalClass.VERTEBRATE);
-        setSubClass(AnimalSubClass.FISH);
+        setMySubClass(AnimalSubClass.FISH);
+        addMotion(Motion.SWIM);
+        addMedia(Media.WATER);
     }
 }

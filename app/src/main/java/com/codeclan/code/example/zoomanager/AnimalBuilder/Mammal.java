@@ -9,6 +9,6 @@ public abstract class Mammal extends Animal {
     public Mammal(){
         super();
         setMyClass(AnimalClass.VERTEBRATE);
-        setSubClass(AnimalSubClass.MAMMAL);
+        setMySubClass(AnimalSubClass.MAMMAL);
     }
 }

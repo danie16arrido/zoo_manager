@@ -54,4 +54,5 @@ public class vertebrateFactoryTest {
         Animalable snake = factory.createAnimal(Animalable.AnimalSubClass.REPTILE);
         assertEquals("REPTILE", snake.getMySubClass().name());
     }
+
 }

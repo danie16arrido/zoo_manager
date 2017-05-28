@@ -3,7 +3,9 @@ package com.codeclan.code.example.zoomanager.AnimalBuilder;
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.PriorityQueue;
+import java.util.Set;
 
 /**
  * Created by user on 27/05/2017.
@@ -21,6 +23,30 @@ public interface Animalable {
         AMPHIBIAN,
         BIRD,
         MAMMAL
+    }
+
+    public interface AnimalOrders {
+        enum MammalOrders implements AnimalOrders {
+            RODENTIA,
+            CHIROPTERA,
+            INSECTIVORA,
+            MARSUPIALIA,
+            CARNIVORA,
+            PRIMATES,
+            ARTIODACTYLA,
+            CETACEA,
+            LAGOMORPHA,
+            PINNIPEDIA,
+            EDENTATA,
+            PERRISSODACTYLA,
+            PROBOSCIDEA
+        }
+        enum BirdOrders implements AnimalOrders {
+            SPHENISCIFORMES,
+            STRINGIFORMES,
+            CORACIIFORMETS,
+            PICIFORMERS
+        }
     }
 
     public enum Motion{
@@ -55,13 +81,14 @@ public interface Animalable {
         HERMAPHRODITE
     }
 
-
-
     public AnimalClass getMyClass();
     public void setMyClass(AnimalClass animalClass);
 
     public AnimalSubClass getMySubClass();
     public void setMySubClass(AnimalSubClass animalSubClass);
+
+    public AnimalOrders getMyOrder();
+    public void setMyOrder(AnimalOrders myOrder);
 
     public Consumption getMyConsumption();
     public void setMyConsumption(Consumption myConsumption);

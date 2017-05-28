@@ -18,6 +18,7 @@ public abstract class Animal implements Animalable {
     private String commonName;
     private Boolean hazardous;
     private Sex mySex;
+    private AnimalOrders myOrder;
 
     public Animal(){
         this.myMedia = new ArrayList<Media>();
@@ -100,5 +101,12 @@ public abstract class Animal implements Animalable {
     }
     public void setMySex(Sex mySex) {
         this.mySex = mySex;
+    }
+
+    public AnimalOrders getMyOrder(){
+        return this.myOrder;
+    }
+    public void setMyOrder(AnimalOrders myOrder){
+        this.myOrder = myOrder;
     }
 }

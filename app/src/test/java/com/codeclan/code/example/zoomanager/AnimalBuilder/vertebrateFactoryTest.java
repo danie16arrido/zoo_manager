@@ -8,30 +8,30 @@ import static org.junit.Assert.*;
 /**
  * Created by user on 28/05/2017.
  */
-public class animalFactoryTest {
-    animalFactory factory;
+public class vertebrateFactoryTest {
+    VertebrateFactory factory;
 
     @Before
     public void before(){
-        factory = new animalFactory();
+        factory = new VertebrateFactory();
     }
     @Test
     public void canCreateAnimal(){
-        animalFactory factory =  new animalFactory();
+        VertebrateFactory factory =  new VertebrateFactory();
         Animalable sardine = factory.createAnimal(Animalable.AnimalSubClass.FISH);
         assertEquals("FISH", sardine.getMySubClass().name());
     }
 
     @Test
     public void canGetClass(){
-        animalFactory factory =  new animalFactory();
+        VertebrateFactory factory =  new VertebrateFactory();
         Animalable dog = factory.createAnimal(Animalable.AnimalSubClass.MAMMAL);
         assertEquals("VERTEBRATE", dog.getMyClass().name());
     }
 
     @Test
     public void canGetSex(){
-        animalFactory factory =  new animalFactory();
+        VertebrateFactory factory =  new VertebrateFactory();
         Animalable dog = factory.createAnimal(Animalable.AnimalSubClass.MAMMAL);
         dog.setMySex(Animalable.Sex.MALE);
         assertEquals("MALE", dog.getMySex().name());

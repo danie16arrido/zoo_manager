@@ -10,7 +10,7 @@ import com.codeclan.code.example.zoomanager.AnimalBuilder.AnimalSubClass.Reptile
  * Created by user on 28/05/2017.
  */
 
-public class animalFactory {
+public class VertebrateFactory {
 
     public static Animalable createAnimal(Animalable.AnimalSubClass subClass){
         switch (subClass){

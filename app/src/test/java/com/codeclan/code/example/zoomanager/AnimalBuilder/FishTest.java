@@ -1,5 +1,7 @@
 package com.codeclan.code.example.zoomanager.AnimalBuilder;
 
+import com.codeclan.code.example.zoomanager.AnimalBuilder.SubClass.Fish;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,7 +12,7 @@ import static org.junit.Assert.*;
  */
 public class FishTest {
 
-    public class Sardine extends Fish{
+    public class Sardine extends Fish {
 
     }
     Sardine lola;

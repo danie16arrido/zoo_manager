@@ -1,5 +1,8 @@
 package com.codeclan.code.example.zoomanager.AnimalBuilder;
 
+import com.codeclan.code.example.zoomanager.AnimalBuilder.SubClass.Fish;
+import com.codeclan.code.example.zoomanager.AnimalBuilder.Motion.Jumping;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,7 +14,7 @@ import static org.junit.Assert.*;
  * Created by user on 28/05/2017.
  */
 public class JumpingTest {
-    public class Mullet extends Fish implements Jumping{
+    public class Mullet extends Fish implements Jumping {
         public Mullet(){
             iJump(Motion.JUMP);
         }

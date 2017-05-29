@@ -43,15 +43,15 @@ public class AnimalTest {
     }
 
     @Test
-    public void canGetConsumption(){
-        animal.setMyConsumption(Animalable.Consumption.CARNIVORE);
-    assertEquals("CARNIVORE", animal.getMyConsumption().name());
+    public void canGetFeedingBehaviour(){
+        animal.setMyFeedingBehaviour(Animalable.FeedingBehaviour.CARNIVORE);
+    assertEquals("CARNIVORE", animal.getMyFeedingBehaviour().name());
     }
 
     @Test
-    public void canSetConsumption(){
-        animal.setMyConsumption(Animalable.Consumption.OMNIVORE);
-        assertEquals("OMNIVORE", animal.getMyConsumption().name());
+    public void canSetFeedingBehaviour(){
+        animal.setMyFeedingBehaviour(Animalable.FeedingBehaviour.OMNIVORE);
+        assertEquals("OMNIVORE", animal.getMyFeedingBehaviour().name());
     }
 
     @Test

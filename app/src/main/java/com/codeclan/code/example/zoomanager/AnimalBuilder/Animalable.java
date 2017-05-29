@@ -60,7 +60,7 @@ public interface Animalable {
         DIG
     }
 
-    public enum Consumption {
+    public enum FeedingBehaviour {
         AUTOTROPH,
         CARNIVORE,
         ERGIVORE,
@@ -90,8 +90,8 @@ public interface Animalable {
     public AnimalOrders getMyOrder();
     public void setMyOrder(AnimalOrders myOrder);
 
-    public Consumption getMyConsumption();
-    public void setMyConsumption(Consumption myConsumption);
+    public FeedingBehaviour getMyFeedingBehaviour();
+    public void setMyFeedingBehaviour(FeedingBehaviour myConsumption);
 
     public ArrayList<Media> getMyMedia();
     public void addMedia(Media aMedia);
@@ -113,4 +113,6 @@ public interface Animalable {
 
     public Sex getMySex();
     public void setMySex(Sex aSex);
+
+
 }

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public abstract class Animal implements Animalable {
     private AnimalClass myClass;
     private AnimalSubClass mySubClass;
-    private Consumption myConsumption;
+    private FeedingBehaviour myFeeding;
     private ArrayList<Media> myMedia;
     private ArrayList<Motion> myMotion;
 
@@ -41,8 +41,8 @@ public abstract class Animal implements Animalable {
         this.mySubClass = mySubClass;
     }
 
-    public Consumption getMyConsumption(){
-        return this.myConsumption;
+    public FeedingBehaviour getMyFeedingBehaviour(){
+        return this.myFeeding;
     }
 
     public ArrayList<Media> getMyMedia() {
@@ -53,8 +53,8 @@ public abstract class Animal implements Animalable {
         return this.myMotion;
     }
 
-    public void setMyConsumption(Consumption myConsumption) {
-        this.myConsumption = myConsumption;
+    public void setMyFeedingBehaviour(FeedingBehaviour myFeeding) {
+        this.myFeeding = myFeeding;
     }
 
     public void addMedia(Media myMedia) {

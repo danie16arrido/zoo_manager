@@ -1,5 +1,7 @@
 package com.codeclan.code.example.zoomanager.AnimalBuilder;
 
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 /**
@@ -12,6 +14,8 @@ public abstract class Animal implements Animalable {
     private FeedingBehaviour myFeeding;
     private ArrayList<Media> myMedia;
     private ArrayList<Motion> myMotion;
+    private Timestamp lastTimeFed;
+    private int feedPeriod;
 
     private String name;
     private String scientificName;
@@ -108,5 +112,47 @@ public abstract class Animal implements Animalable {
     }
     public void setMyOrder(AnimalOrders myOrder){
         this.myOrder = myOrder;
+    }
+
+    public Timestamp getLastTimeFed(){
+        return this.lastTimeFed;
+    }
+
+    public void feedMe(Timestamp feedingTime){
+        this.lastTimeFed = feedingTime;
+    }
+
+    public int getFeedingPeriod(){
+        return this.feedPeriod;
+    }
+
+    public void setFeedingPeriod(int every) {
+        this.feedPeriod = every;
+    }
+
+    public boolean timeToFeed(){
+
+        Timestamp now = new Timestamp(System.currentTimeMillis());
+        long diff = compareTwoTimeStamps(now, this.getLastTimeFed());
+        if (diff > this.feedPeriod){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+    private static long compareTwoTimeStamps(java.sql.Timestamp currentTime, java.sql.Timestamp oldTime)
+    {
+        long milliseconds1 = oldTime.getTime();
+        long milliseconds2 = currentTime.getTime();
+
+        long diff = milliseconds2 - milliseconds1;
+//        long diffSeconds = diff / 1000;
+//        long diffMinutes = diff / (60 * 1000);
+        long diffHours = diff / (60 * 60 * 1000);
+//        long diffDays = diff / (24 * 60 * 60 * 1000);
+
+        return diffHours;
     }
 }

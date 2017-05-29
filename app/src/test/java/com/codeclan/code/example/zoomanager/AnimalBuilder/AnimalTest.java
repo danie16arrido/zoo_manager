@@ -3,6 +3,10 @@ package com.codeclan.code.example.zoomanager.AnimalBuilder;
 import org.junit.Before;
 import org.junit.Test;
 
+
+import java.sql.Timestamp;
+import java.util.Date;
+
 import static org.junit.Assert.*;
 
 /**
@@ -117,5 +121,28 @@ public class AnimalTest {
         animal.setMySex(Animalable.Sex.FEMALE);
         assertEquals("FEMALE", animal.getMySex().name());
     }
+
+    @Test
+    public void canGetLastTimeFeed(){
+        Timestamp now = new Timestamp(System.currentTimeMillis());
+        animal.feedMe(now);
+        assertEquals(now, animal.getLastTimeFed());
+    }
+
+    @Test
+    public void canGetFeedPeriod(){
+        animal.setFeedingPeriod(24);
+        assertEquals(24, animal.getFeedingPeriod());
+    }
+
+    @Test
+    public void canCheckFeedingTime(){
+        animal.setFeedingPeriod(0);
+        Timestamp now = new Timestamp(System.currentTimeMillis());
+        animal.feedMe(now);
+        assertEquals(false, animal.timeToFeed());
+    }
+
+
 
 }

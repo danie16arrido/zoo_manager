@@ -2,6 +2,7 @@ package com.codeclan.code.example.zoomanager.AnimalBuilder;
 
 import android.content.Context;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.PriorityQueue;
@@ -150,6 +151,14 @@ public interface Animalable {
 
     public Sex getMySex();
     public void setMySex(Sex aSex);
+
+    public Timestamp getLastTimeFed();
+    public void feedMe(Timestamp aTime);
+
+    public int getFeedingPeriod();
+    public void setFeedingPeriod(int every);
+
+    public boolean timeToFeed();
 
 
 }

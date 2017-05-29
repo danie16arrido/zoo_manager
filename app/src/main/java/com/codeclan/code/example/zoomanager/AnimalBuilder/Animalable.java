@@ -42,10 +42,47 @@ public interface Animalable {
             PROBOSCIDEA
         }
         enum BirdOrders implements AnimalOrders {
-            SPHENISCIFORMES,
-            STRINGIFORMES,
-            CORACIIFORMETS,
-            PICIFORMERS
+            STRUTHIONIFORMES,
+            CRACIFORMES,
+            GALLIFORMES,
+            ANSERIFORMES,
+            TURNICIFORMES,
+            PICIFORMES,
+            GALBULIFORMES,
+            BUCEROTIFORMES,
+            UPUPIFORMES,
+            TROGONIFORMES,
+            CORACIIFORMES,
+            COLIIFORMES,
+            CUCULIFORMES,
+            PSITTACIFORMES,
+            APODIFORMES,
+            TROCHILIFORMES,
+            MUSOPHAGIFORMES,
+            STRIGIFORMES,
+            COLUMBIFORMES,
+            GRUIFORMES,
+            CICONIIFORMES
+        }
+
+        enum ReptilOrders implements AnimalOrders{
+            RHYNCOCEPHALIA,
+            SQUAMATA,
+            CHELONIA,
+            CROCODILIA
+        }
+
+        enum FishOrders implements AnimalOrders {
+            PREHISTORIC,
+            BONY,
+            CARTILAGINOUS,
+            JAWLESS
+        }
+
+        enum AmphibianOrders implements  AnimalOrders {
+            ANURA,
+            URODELA,
+            APODA
         }
     }
 

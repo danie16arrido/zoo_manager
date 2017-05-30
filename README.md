@@ -1,4 +1,4 @@
-y Zoo Manager
+## Zoo Manager
 
 Goal: Practice OO modelling  in Java (unit tests, no UI)
 

@@ -6,6 +6,8 @@ import com.codeclan.code.example.zoomanager.AnimalBuilder.AnimalSubClass.Fish;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.AnimalSubClass.Mammal;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.AnimalSubClass.Reptile;
 
+import java.sql.Timestamp;
+
 /**
  * Created by user on 28/05/2017.
  */
@@ -15,7 +17,8 @@ public class VertebrateFactory {
     public static Animalable createAnimal(Animalable.AnimalSubClass subClass){
         switch (subClass){
             case MAMMAL:
-                class aMammal extends Mammal {};
+                class aMammal extends Mammal {
+                };
                 return new aMammal();
             case FISH:
                 class aFish extends Fish {};

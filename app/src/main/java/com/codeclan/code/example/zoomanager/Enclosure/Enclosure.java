@@ -16,12 +16,18 @@ public abstract class Enclosure implements Enclosuring {
 
     public Enclosure(){
         hosts = new ArrayList<>();
-        maxCapacity = 0;
+        maxCapacity = 1;
     }
 
     @Override
-    public void addAnimalToEnclosure(Animalable animal) {
-        this.hosts.add(animal);
+    public boolean addAnimalToEnclosure(Animalable animal) {
+        if (getRemainingOccupancy() > 0){
+            this.hosts.add(animal);
+            return true;
+        }else {
+            return false;
+        }
+
     }
 
     @Override

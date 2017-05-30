@@ -1,5 +1,7 @@
 package com.codeclan.code.example.zoomanager.AnimalBuilder;
 
+import com.codeclan.code.example.zoomanager.AnimalBuilder.Food.Food;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,11 +18,21 @@ public class AnimalTest {
 
     public class Lion extends Animal{}
     Lion animal;
-
+    public class Insects extends Food{
+        public Insects(String name) {
+            super(name);
+        }
+    }
+    Insects fly;
     @Before
     public  void before(){
         animal = new Lion();
+        fly = new Insects("fly");
+        fly.setType(Animalable.FeedingBehaviour.INSECTIVORE);
+        fly.setWeightGrams(200);
     }
+
+
 
     @Test
     public void canGetClass(){
@@ -124,8 +136,9 @@ public class AnimalTest {
 
     @Test
     public void canGetLastTimeFeed(){
+        Food food = new Food("food");
         Timestamp now = new Timestamp(System.currentTimeMillis());
-        animal.feedMe(now);
+        animal.feedMe(now, food);
         assertEquals(now, animal.getLastTimeFed());
     }
 
@@ -137,10 +150,24 @@ public class AnimalTest {
 
     @Test
     public void canCheckFeedingTime(){
+        Food food = new Food("food");
         animal.setFeedingPeriod(0);
         Timestamp now = new Timestamp(System.currentTimeMillis());
-        animal.feedMe(now);
+        animal.feedMe(now, food);
         assertEquals(false, animal.timeToFeed());
+    }
+
+    @Test
+    public void canFeedAnimal(){
+        Timestamp now = new Timestamp(System.currentTimeMillis());
+        animal.feedMe(now, fly);
+    }
+
+    @Test
+    public void canEat(){
+        Timestamp now = new Timestamp(System.currentTimeMillis());
+        animal.feedMe(now, fly);
+        assertEquals(1, animal.howFullIsMyBelly());
     }
 
 

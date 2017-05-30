@@ -1,18 +1,13 @@
 package com.codeclan.code.example.zoomanager.ZooKeeper;
 
-import android.os.health.TimerStat;
-import android.provider.Settings;
-import android.util.Log;
-
 import com.codeclan.code.example.zoomanager.AnimalBuilder.Animalable;
+import com.codeclan.code.example.zoomanager.AnimalBuilder.Food.Food;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.VertebrateFactory;
 import com.codeclan.code.example.zoomanager.Enclosure.Enclosure;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.PrintWriter;
-import java.sql.Time;
 import java.sql.Timestamp;
 
 import static org.junit.Assert.*;
@@ -62,14 +57,24 @@ public class ZooKeeperTest {
 
     @Test
     public void canFeedAnimal(){
-        one.addAnimalToEnclosure(animalTest);
+        Food food = new Food("food");
+        food.setType(Animalable.FeedingBehaviour.INSECTIVORE);
+
+        animalTest.setMyFeedingBehaviour(Animalable.FeedingBehaviour.INSECTIVORE);
         animalTest.setFeedingPeriod(4);
+
+        one.addAnimalToEnclosure(animalTest);
+        Edinburgh.addEnclosure(one);
+
         //set last feed time six hour earlier
         Timestamp earlier = new Timestamp(System.currentTimeMillis() - 21600000);
-        animalTest.feedMe(earlier);
+        animalTest.feedMe(earlier, food);
+
         assertEquals(true, animalTest.timeToFeed());
-        ZooKeeper.feedAnimalInCage(one);
+
+        Edinburgh.feedAnimalsInCage(Edinburgh.getEnclosures().get(0));
         assertEquals(false, animalTest.timeToFeed());
+        System.out.print(one.getMaxCapacity());
     }
 
 }

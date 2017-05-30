@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 
 public interface Enclosuring {
-    public void addAnimalToEnclosure(Animalable animal);
+    public boolean addAnimalToEnclosure(Animalable animal);
     public void removeAnimalFromEnclosure(Animalable animal);
 
     public boolean checkIfEmpty();

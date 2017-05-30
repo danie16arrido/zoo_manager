@@ -1,5 +1,9 @@
 package com.codeclan.code.example.zoomanager.AnimalBuilder;
 
+import android.icu.text.SymbolTable;
+
+import com.codeclan.code.example.zoomanager.AnimalBuilder.Food.Edible;
+
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -8,25 +12,34 @@ import java.util.ArrayList;
  * Created by user on 27/05/2017.
  */
 
-public abstract class Animal implements Animalable {
-    private AnimalClass myClass;
-    private AnimalSubClass mySubClass;
-    private FeedingBehaviour myFeeding;
-    private ArrayList<Media> myMedia;
-    private ArrayList<Motion> myMotion;
-    private Timestamp lastTimeFed;
-    private int feedPeriod;
-
+public  class Animal implements Animalable {
     private String name;
     private String scientificName;
     private String commonName;
+
+    private AnimalClass myClass;
+    private AnimalSubClass mySubClass;
+    private AnimalOrders myOrder;
+
+    private FeedingBehaviour myFeeding;
+    private ArrayList<Media> myMedia;
+    private ArrayList<Motion> myMotion;
+
     private Boolean hazardous;
     private Sex mySex;
-    private AnimalOrders myOrder;
+
+    private Timestamp lastTimeFed;
+    private int feedPeriod;
+    private boolean fed;
+
+    private ArrayList<Edible> belly;
 
     public Animal(){
         this.myMedia = new ArrayList<Media>();
         this.myMotion = new ArrayList<Motion>();
+        this.fed = false;
+        this.belly = new ArrayList<>();
+//        this.lastTimeFed = new Timestamp(System.currentTimeMillis());
     }
 
     public AnimalClass getMyClass(){
@@ -118,8 +131,9 @@ public abstract class Animal implements Animalable {
         return this.lastTimeFed;
     }
 
-    public void feedMe(Timestamp feedingTime){
+    public void feedMe(Timestamp feedingTime, Edible food){
         this.lastTimeFed = feedingTime;
+        this.belly.add(food);
     }
 
     public int getFeedingPeriod(){
@@ -131,18 +145,17 @@ public abstract class Animal implements Animalable {
     }
 
     public boolean timeToFeed(){
-
-        Timestamp now = new Timestamp(System.currentTimeMillis());
-        long diff = compareTwoTimeStamps(now, this.getLastTimeFed());
-        if (diff > this.feedPeriod){
-            return true;
-        }else{
-            return false;
-        }
+        this.fed = checkIfNeedFeeding();
+        return this.fed;
     }
 
+    private boolean checkIfNeedFeeding(){
+        Timestamp now = new Timestamp(System.currentTimeMillis());
+        long diff = compareTwoTimeStamps(now, this.getLastTimeFed());
+        return (diff > this.feedPeriod);
+    }
 
-    private static long compareTwoTimeStamps(java.sql.Timestamp currentTime, java.sql.Timestamp oldTime)
+    private static long compareTwoTimeStamps(Timestamp currentTime, Timestamp oldTime)
     {
         long milliseconds1 = oldTime.getTime();
         long milliseconds2 = currentTime.getTime();
@@ -154,5 +167,9 @@ public abstract class Animal implements Animalable {
 //        long diffDays = diff / (24 * 60 * 60 * 1000);
 
         return diffHours;
+    }
+
+    public int howFullIsMyBelly(){
+        return this.belly.size();
     }
 }

@@ -2,6 +2,8 @@ package com.codeclan.code.example.zoomanager.AnimalBuilder;
 
 import android.content.Context;
 
+import com.codeclan.code.example.zoomanager.AnimalBuilder.Food.Edible;
+
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -104,7 +106,8 @@ public interface Animalable {
         ERGIVORE,
         HERBIVORE,
         OMNIVORE,
-        SCAVENGER
+        SCAVENGER,
+        INSECTIVORE
     }
 
     public enum Media {
@@ -153,12 +156,13 @@ public interface Animalable {
     public void setMySex(Sex aSex);
 
     public Timestamp getLastTimeFed();
-    public void feedMe(Timestamp aTime);
+    public void feedMe(Timestamp aTime, Edible food);
 
     public int getFeedingPeriod();
     public void setFeedingPeriod(int every);
 
     public boolean timeToFeed();
 
+    public int howFullIsMyBelly();
 
 }

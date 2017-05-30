@@ -77,4 +77,17 @@ public class EnclosureTest {
        assertEquals("Boby", mammal.getName());
     }
 
+    @Test
+    public void canNotAddAnimalWhenMaxCapacity(){
+        Animalable mammal = factory.createAnimal(Animalable.AnimalSubClass.MAMMAL);
+        mammal.setName("Boby");
+        Animalable fish = factory.createAnimal(Animalable.AnimalSubClass.FISH);
+        mammal.setName("Adam");
+        cage.setMaxCapacity(1);
+        cage.addAnimalToEnclosure(mammal);
+        assertEquals(1, cage.getCurrentOccupancy());
+        assertEquals(0, cage.getRemainingOccupancy());
+        assertEquals(false, cage.addAnimalToEnclosure(fish));
+    }
+
 }

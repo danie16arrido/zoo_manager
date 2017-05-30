@@ -20,4 +20,5 @@ public interface Enclosuring {
     public int getRemainingOccupancy();
 
     public ArrayList<Animalable> getHosts();
+
 }

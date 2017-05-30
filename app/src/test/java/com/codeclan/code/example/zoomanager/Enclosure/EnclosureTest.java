@@ -90,4 +90,38 @@ public class EnclosureTest {
         assertEquals(false, cage.addAnimalToEnclosure(fish));
     }
 
+    @Test
+    public void canFindAnimalByName(){
+        Animalable mammal = factory.createAnimal(Animalable.AnimalSubClass.MAMMAL);
+        mammal.setName("Boby");
+        Animalable fish = factory.createAnimal(Animalable.AnimalSubClass.FISH);
+        fish.setName("found");
+
+        cage.setMaxCapacity(5);
+        cage.addAnimalToEnclosure(mammal);
+        cage.addAnimalToEnclosure(fish);
+
+        assertEquals(2, cage.getCurrentOccupancy());
+
+        Animalable transfer = cage.findAnimalByName("found");
+        assertEquals(true, transfer.getName().equals("found"));
+        assertEquals(true, transfer.equals(fish));
+    }
+
+    @Test
+    public void canNotFindAnimalByName(){
+        Animalable mammal = factory.createAnimal(Animalable.AnimalSubClass.MAMMAL);
+        mammal.setName("Boby");
+        Animalable fish = factory.createAnimal(Animalable.AnimalSubClass.FISH);
+        fish.setName("found");
+
+        cage.setMaxCapacity(5);
+        cage.addAnimalToEnclosure(mammal);
+        cage.addAnimalToEnclosure(fish);
+
+        assertEquals(2, cage.getCurrentOccupancy());
+
+        assertNull(cage.findAnimalByName("Daniel"));
+    }
+
 }

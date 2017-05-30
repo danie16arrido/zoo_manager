@@ -1,5 +1,6 @@
 package com.codeclan.code.example.zoomanager.ZooKeeper;
 
+import com.codeclan.code.example.zoomanager.AnimalBuilder.Animal;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.Animalable;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.Food.Edible;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.Food.Food;
@@ -77,5 +78,19 @@ public class ZooKeeper {
                 animal.feedMe(now, food);
             }
         }
+    }
+
+
+    public boolean transferBaby(Enclosure originEnclosure, Animalable animalMoving, ZooKeeper destination, Enclosure destEnclousure) {
+        if (!animalMoving.isAdult()){
+            originEnclosure.removeAnimalFromEnclosure(animalMoving);
+            destination.addEnclosure(destEnclousure);
+            destEnclousure.addAnimalToEnclosure(animalMoving);
+            return true;
+        }else {
+            return false;
+        }
+
+
     }
 }

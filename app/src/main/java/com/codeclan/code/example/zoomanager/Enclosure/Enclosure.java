@@ -65,4 +65,14 @@ public abstract class Enclosure implements Enclosuring {
     public ArrayList<Animalable> getHosts(){
         return this.hosts;
     }
+
+
+    public Animalable findAnimalByName(String animalName){
+        for ( Animalable toBeFound : this.hosts){
+            if (toBeFound.getName().equals(animalName)){
+                return toBeFound;
+            }
+        }
+        return null;
+    }
 }

@@ -170,6 +170,16 @@ public class AnimalTest {
         assertEquals(1, animal.howFullIsMyBelly());
     }
 
+    @Test
+    public void isAdult(){
+        animal.setAsAdult();
+        assertEquals(true, animal.isAdult());
+    }
 
+    @Test
+    public void isBaby(){
+        animal.setAsBaby();
+        assertEquals(false, animal.isAdult());
+    }
 
 }

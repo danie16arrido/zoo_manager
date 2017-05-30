@@ -165,4 +165,13 @@ public interface Animalable {
 
     public int howFullIsMyBelly();
 
+    public boolean isAdult();
+
+    public void setAsAdult();
+
+    public void setAsBaby();
+
+
+
+
 }

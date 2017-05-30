@@ -33,6 +33,7 @@ public  class Animal implements Animalable {
     private boolean fed;
 
     private ArrayList<Edible> belly;
+    private boolean adult;
 
     public Animal(){
         this.myMedia = new ArrayList<Media>();
@@ -172,4 +173,18 @@ public  class Animal implements Animalable {
     public int howFullIsMyBelly(){
         return this.belly.size();
     }
+
+    @Override
+    public boolean isAdult() {
+        return this.adult ;
+    }
+
+    public void setAsAdult() {
+        this.adult = true;
+    }
+
+    public void setAsBaby() {
+        this.adult = false;
+    }
+
 }

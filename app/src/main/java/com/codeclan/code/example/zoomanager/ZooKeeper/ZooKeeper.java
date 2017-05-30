@@ -102,7 +102,7 @@ public class ZooKeeper {
         }
     }
 
-    public boolean addVisitor(Person visitor) {
+    public boolean sellTicket(Person visitor) {
         if (maxCapacity > getNumberOfVisitors()){
             this.currentVisitors.add(visitor);
             double feeToCharge = getFee(visitor.getAge());

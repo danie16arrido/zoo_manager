@@ -1,6 +1,5 @@
 package com.codeclan.code.example.zoomanager.ZooKeeper;
 
-import com.codeclan.code.example.zoomanager.AnimalBuilder.Animal;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.Animalable;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.Food.Food;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.VertebrateFactory;
@@ -9,7 +8,6 @@ import com.codeclan.code.example.zoomanager.Person.Person;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.Describable;
 
 import java.sql.Timestamp;
 
@@ -99,19 +97,19 @@ public class ZooKeeperTest {
 
     @Test
     public void canAddVisitors(){
-        assertEquals(true, Edinburgh.addVisitor(visitor));
+        assertEquals(true, Edinburgh.sellTicket(visitor));
         assertEquals(1, Edinburgh.getNumberOfVisitors());
     }
 
     @Test
     public void canChargeVisitors(){
-        Edinburgh.addVisitor(visitor);
+        Edinburgh.sellTicket(visitor);
         assertEquals(83, visitor.getWallet(), 0.01);
     }
 
     @Test
     public void canAddToZooCoffer(){
-        Edinburgh.addVisitor(visitor);
+        Edinburgh.sellTicket(visitor);
         assertEquals(17, Edinburgh.getCoffers(), 0.01);
     }
 
@@ -124,9 +122,9 @@ public class ZooKeeperTest {
     @Test
     public void canRefuseVisitorsWhenFull(){
         Edinburgh.setMaxCapacity(1);
-        Edinburgh.addVisitor(visitor);
+        Edinburgh.sellTicket(visitor);
 
-        assertEquals(false, Edinburgh.addVisitor(visitor1));
+        assertEquals(false, Edinburgh.sellTicket(visitor1));
         assertEquals(1, Edinburgh.getNumberOfVisitors());
 
     }
@@ -135,7 +133,7 @@ public class ZooKeeperTest {
     public void canChargeChildrenFee(){
         Edinburgh.setMaxCapacity(22);
         visitor.setAge(10);
-        Edinburgh.addVisitor(visitor);
+        Edinburgh.sellTicket(visitor);
         assertEquals(86, visitor.getWallet(), 0.01);
     }
 
@@ -143,7 +141,7 @@ public class ZooKeeperTest {
     public void canChargeSeniorFee(){
         Edinburgh.setMaxCapacity(22);
         visitor.setAge(61);
-        Edinburgh.addVisitor(visitor);
+        Edinburgh.sellTicket(visitor);
         assertEquals(88, visitor.getWallet(), 0.01);
     }
 

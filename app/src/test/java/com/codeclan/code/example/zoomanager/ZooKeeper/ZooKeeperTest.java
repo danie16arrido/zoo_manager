@@ -5,9 +5,11 @@ import com.codeclan.code.example.zoomanager.AnimalBuilder.Animalable;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.Food.Food;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.VertebrateFactory;
 import com.codeclan.code.example.zoomanager.Enclosure.Enclosure;
+import com.codeclan.code.example.zoomanager.Person.Person;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.Describable;
 
 import java.sql.Timestamp;
 
@@ -22,6 +24,9 @@ public class ZooKeeperTest {
     VertebrateFactory factory;
     Animalable animalTest;
     Animalable animalTest1;
+
+    Person visitor;
+    Person visitor1;
     public class standardEnclosure extends Enclosure{
     }
     standardEnclosure one = new standardEnclosure();
@@ -32,6 +37,8 @@ public class ZooKeeperTest {
         Dundee = new ZooKeeper("Dundee");
         animalTest = factory.createAnimal(Animalable.AnimalSubClass.MAMMAL);
         animalTest1 = factory.createAnimal(Animalable.AnimalSubClass.FISH);
+        visitor = new Person("daniel", 40, 100);
+        visitor1 = new Person("John", 30, 20);
     }
 
     @Test
@@ -88,6 +95,56 @@ public class ZooKeeperTest {
         one.addAnimalToEnclosure(animalTest);
 
         assertEquals(true, Edinburgh.transferBaby(one, animalTest, Dundee, two));
+    }
+
+    @Test
+    public void canAddVisitors(){
+        assertEquals(true, Edinburgh.addVisitor(visitor));
+        assertEquals(1, Edinburgh.getNumberOfVisitors());
+    }
+
+    @Test
+    public void canChargeVisitors(){
+        Edinburgh.addVisitor(visitor);
+        assertEquals(83, visitor.getWallet(), 0.01);
+    }
+
+    @Test
+    public void canAddToZooCoffer(){
+        Edinburgh.addVisitor(visitor);
+        assertEquals(17, Edinburgh.getCoffers(), 0.01);
+    }
+
+    @Test
+    public void canSetGetMaxCapacity(){
+        Edinburgh.setMaxCapacity(4);
+        assertEquals(4, Edinburgh.getMaxCapacity());
+    }
+
+    @Test
+    public void canRefuseVisitorsWhenFull(){
+        Edinburgh.setMaxCapacity(1);
+        Edinburgh.addVisitor(visitor);
+
+        assertEquals(false, Edinburgh.addVisitor(visitor1));
+        assertEquals(1, Edinburgh.getNumberOfVisitors());
+
+    }
+
+    @Test
+    public void canChargeChildrenFee(){
+        Edinburgh.setMaxCapacity(22);
+        visitor.setAge(10);
+        Edinburgh.addVisitor(visitor);
+        assertEquals(86, visitor.getWallet(), 0.01);
+    }
+
+    @Test
+    public void canChargeSeniorFee(){
+        Edinburgh.setMaxCapacity(22);
+        visitor.setAge(61);
+        Edinburgh.addVisitor(visitor);
+        assertEquals(88, visitor.getWallet(), 0.01);
     }
 
 }

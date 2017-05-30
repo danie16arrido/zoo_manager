@@ -5,7 +5,7 @@ package com.codeclan.code.example.zoomanager.Fee;
  */
 
 public class TicketTypes {
-    enum types {
+    public enum source {
         STANDARD,
         CUDDLE_A_TIGER,
         ZOO_KEEPER_EXPERIENCE

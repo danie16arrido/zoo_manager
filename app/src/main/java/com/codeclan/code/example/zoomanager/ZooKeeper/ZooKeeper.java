@@ -3,6 +3,8 @@ package com.codeclan.code.example.zoomanager.ZooKeeper;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.Animalable;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.Food.Food;
 import com.codeclan.code.example.zoomanager.Enclosure.Enclosure;
+import com.codeclan.code.example.zoomanager.Fee.Feeable;
+import com.codeclan.code.example.zoomanager.Fee.TicketTypes;
 import com.codeclan.code.example.zoomanager.Person.Person;
 
 import java.sql.Timestamp;
@@ -22,9 +24,9 @@ public class ZooKeeper {
     private ArrayList<Enclosure> allEnclosures;
     private ArrayList<Person> currentVisitors;
 
-    private double entryFee = 17;
-    private double entryFeeChildren = 14;
-    private double entryFeeSenior = 12;
+//    private double entryFee = 17;
+    private double discountFeeChildren = 20;
+    private double discountFeeSenior = 30;
 
     private double coffers;
 
@@ -102,10 +104,11 @@ public class ZooKeeper {
         }
     }
 
-    public boolean sellTicket(Person visitor) {
+    public boolean sellTicket(Person visitor, Feeable ticket) {
+
         if (maxCapacity > getNumberOfVisitors()){
             this.currentVisitors.add(visitor);
-            double feeToCharge = getFee(visitor.getAge());
+            double feeToCharge = getFee(visitor.getAge(), ticket.getFee());
             visitor.takeFromWallet(feeToCharge);
             this.coffers += feeToCharge;
             return true;
@@ -114,15 +117,19 @@ public class ZooKeeper {
         }
     }
 
-    private double getFee(int age){
+    private double getFee(int age, double fee){
         if (age >= 60){
-            return entryFeeSenior;
+            return applyDiscount(fee, discountFeeSenior);
         }else if (age <=12){
-            return entryFeeChildren;
+            return applyDiscount(fee, discountFeeChildren);
         }
         else{
-            return entryFee;
+            return fee;
         }
+    }
+
+    private double applyDiscount(double fee, double percentageDiscount){
+        return fee * ((100 - percentageDiscount)/100);
     }
 
     public int getNumberOfVisitors() {

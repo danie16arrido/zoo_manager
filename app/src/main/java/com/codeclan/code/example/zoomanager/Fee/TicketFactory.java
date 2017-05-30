@@ -4,9 +4,9 @@ package com.codeclan.code.example.zoomanager.Fee;
  * Created by user on 30/05/2017.
  */
 
-public class ticketFactory {
+public class TicketFactory {
 
-    public static Feeable createTicket(TicketTypes.types ticket){
+    public static Feeable createTicket(TicketTypes.source ticket){
         BaseFee standardTicket = new BaseFee();
         switch (ticket){
             case STANDARD:

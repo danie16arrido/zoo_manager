@@ -6,7 +6,7 @@ package com.codeclan.code.example.zoomanager.Fee;
 
 public class ZooKeeperExperience extends FeeableDecorator {
     private double zooKeeperExperincePrice = 23;
-    private String description = "Spend the day being a keeper at Edinburgh Zoo";
+    private String description = "Spend the day being a keeper at the Zoo";
 
     public ZooKeeperExperience(BaseFee baseFee) {
         super(baseFee);

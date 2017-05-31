@@ -94,7 +94,6 @@ public class ZooKeeperTest {
 
         Edinburgh.feedAnimalsInCage(Edinburgh.getEnclosures().get(0));
         assertEquals(false, animalTest.timeToFeed());
-        System.out.print(one.getMaxCapacity());
     }
 
     @Test

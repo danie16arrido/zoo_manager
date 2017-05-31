@@ -1,4 +1,4 @@
-package com.codeclan.code.example.zoomanager.AnimalBuilder.FeedingBehaviour;
+package com.codeclan.code.example.zoomanager.AnimalBuilder.EatingHabits;
 
 import com.codeclan.code.example.zoomanager.AnimalBuilder.AnimalSubClass.Mammal;
 
@@ -17,7 +17,7 @@ public class HerbivoringTest {
         }
         @Override
         public void iAmHerbivore() {
-            setMyFeedingBehaviour(FeedingBehaviour.HERBIVORE);
+            setMyFeedingBehaviour(new Hervibore().type());
         }
     }
     Horse quickDraw;

@@ -1,10 +1,7 @@
 package com.codeclan.code.example.zoomanager.AnimalBuilder;
 
-import android.icu.text.SymbolTable;
-
 import com.codeclan.code.example.zoomanager.AnimalBuilder.Food.Edible;
 
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 

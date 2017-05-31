@@ -1,7 +1,6 @@
-package com.codeclan.code.example.zoomanager.AnimalBuilder.FeedingBehaviour;
+package com.codeclan.code.example.zoomanager.AnimalBuilder.EatingHabits;
 
 import com.codeclan.code.example.zoomanager.AnimalBuilder.AnimalSubClass.Mammal;
-import com.codeclan.code.example.zoomanager.AnimalBuilder.Animalable;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +18,7 @@ public class CarnivoringTest {
         }
         @Override
         public void iAmCarnivore() {
-            setMyFeedingBehaviour(FeedingBehaviour.CARNIVORE);
+            setMyFeedingBehaviour(new Carnivore().type());
         }
     }
     Lion simba;

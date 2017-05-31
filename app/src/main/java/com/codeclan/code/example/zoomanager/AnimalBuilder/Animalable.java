@@ -1,14 +1,9 @@
 package com.codeclan.code.example.zoomanager.AnimalBuilder;
 
-import android.content.Context;
-
 import com.codeclan.code.example.zoomanager.AnimalBuilder.Food.Edible;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.PriorityQueue;
-import java.util.Set;
 
 /**
  * Created by user on 27/05/2017.

@@ -4,7 +4,6 @@ import com.codeclan.code.example.zoomanager.AnimalBuilder.Animalable;
 import com.codeclan.code.example.zoomanager.AnimalBuilder.Food.Food;
 import com.codeclan.code.example.zoomanager.Enclosure.Enclosure;
 import com.codeclan.code.example.zoomanager.Fee.Feeable;
-import com.codeclan.code.example.zoomanager.Fee.TicketTypes;
 import com.codeclan.code.example.zoomanager.Person.Person;
 
 import java.sql.Timestamp;

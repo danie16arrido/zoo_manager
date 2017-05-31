@@ -19,7 +19,7 @@ public abstract class Proboscidea extends Mammal {
 
         setHazardous(true);
 
-        setMyOrder(AnimalOrders.MammalOrders.PRIMATES);
+        setMyOrder(AnimalOrders.MammalOrders.PROBOSCIDEA);
     }
 }
 

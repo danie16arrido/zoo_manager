@@ -9,6 +9,7 @@ import org.junit.Test;
 import java.sql.Timestamp;
 import java.util.Date;
 
+
 import static org.junit.Assert.*;
 
 /**
@@ -61,7 +62,8 @@ public class AnimalTest {
     @Test
     public void canGetFeedingBehaviour(){
         animal.setMyFeedingBehaviour(Animalable.FeedingBehaviour.CARNIVORE);
-    assertEquals("CARNIVORE", animal.getMyFeedingBehaviour().name());
+//        animal.setMyFeedingBehaviour(new FeedingBehaviour.);
+        assertEquals("CARNIVORE", animal.getMyFeedingBehaviour().name());
     }
 
     @Test

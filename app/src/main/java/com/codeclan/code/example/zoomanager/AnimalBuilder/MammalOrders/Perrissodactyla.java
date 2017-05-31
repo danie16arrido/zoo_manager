@@ -17,7 +17,7 @@ public abstract class Perrissodactyla extends Mammal {
         addMedia(Media.WATER);
 
         setHazardous(true);
-        setMyFeedingBehaviour(FeedingBehaviour.HERBIVORE);
+        setMyFeedingBehaviour(FeedingBehaviour.CARNIVORE);
         setMyOrder(AnimalOrders.MammalOrders.PERRISSODACTYLA);
     }
 }

@@ -15,3 +15,14 @@ The user must be able to add enclosures, add / remove animals, feed animals and 
  * Visitors can enter / exit the zoo if there are tickets left. 
  * View the total income for the zoo.
  * Animals can randomly go on a rampage and break out of their enclosures
+ 
+ 
+ ## Design Patterns used in the project
+ 
+ * Factory
+ * Abstract Factory
+ * Decorator 
+ * Strategy
+ 
+ ## UML DIAGRAM 
+![UML Diagram](https://github.com/danie16arrido/zoo_manager/blob/master/ZooManagerUML.jpeg)
